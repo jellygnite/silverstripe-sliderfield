@@ -13,7 +13,7 @@ jQuery.entwine('ss', ($) => {
       return this.data('orientation');
     },
     limitValue() {
-      let val = parseInt(this.val(), 10);
+      let val = parseFloat(this.val());
       if (isNaN(val)) val = 0;
       val = Math.max(this.getMin(), Math.min(this.getMax(), val));
       this.val(val);
