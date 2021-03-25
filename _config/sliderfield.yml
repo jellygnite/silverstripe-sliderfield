@@ -1,0 +1,7 @@
+---
+Name: sliderfieldconfig
+---
+Jellygnite\SliderField\SliderField:
+  default_minimum: 0
+  default_maximum: 100
+  default_step: 1
