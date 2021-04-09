@@ -34,6 +34,7 @@ jQuery.entwine('ss', ($) => {
           step: _that.getStep(),
           slide: (event, ui) => {
             _that.val(ui.value);
+			$(_that).trigger("change");
           }
         });
     },
