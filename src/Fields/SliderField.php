@@ -66,6 +66,14 @@ class SliderField extends TextField
      */
     protected $step;
 	
+
+    /**
+     * Unit of slider
+     *
+     * @var string
+     */
+    protected $unit;
+	
     /**
      * Create a SliderField object
      *
@@ -132,7 +140,7 @@ class SliderField extends TextField
     }
 
     /**
-     * Get the maximum range value
+     * Get the step value
      *
      * @return integer
      */
@@ -142,9 +150,9 @@ class SliderField extends TextField
     }
 
     /**
-     * Set the maximum range value
+     * Set the step value
      *
-     * @param int $maximum
+     * @param int $step
      */
     public function setStep($step)
     {
@@ -153,6 +161,27 @@ class SliderField extends TextField
         }
         $this->step = $step;
     }
+
+    /**
+     * Get the unit label
+     *
+     * @return string
+     */
+    public function getUnit()
+    {
+        return $this->unit;
+    }
+
+    /**
+     * Set the unit label
+     *
+     * @param string $unit
+     */
+    public function setUnit($unit)
+    {
+        $this->unit = $unit;
+    }
+
 
     public function Field($properties = array())
     {
@@ -171,7 +200,8 @@ class SliderField extends TextField
                 'data-min' => $this->getMinimum(),
                 'data-max' => $this->getMaximum(),
                 'data-orientation' => $this->getOrientation(),
-                'data-step' => $this->getStep()
+                'data-step' => $this->getStep(),
+                'data-unit' => $this->getUnit()
             )
         );
     }

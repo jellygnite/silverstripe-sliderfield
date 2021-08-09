@@ -9,6 +9,9 @@ jQuery.entwine('ss', ($) => {
     getStep() {
       return this.data('step');
     },
+    getUnit() {
+      return this.data('unit');
+    },
     getOrientation() {
       return this.data('orientation');
     },
@@ -23,8 +26,9 @@ jQuery.entwine('ss', ($) => {
       const _that = this;
       const val = _that.limitValue();
         // setup slider controller
-      $("<div class='slide-controller'></div>")
-        .insertAfter(this)
+	  
+      $('<div class="slide-controller"></div>')
+        .insertAfter(_that)
         .slider({
           orientation: _that.getOrientation(),
           range: 'min',
@@ -32,11 +36,16 @@ jQuery.entwine('ss', ($) => {
           min: _that.getMin(),
           max: _that.getMax(),
           step: _that.getStep(),
+          unit: _that.getUnit(),
           slide: (event, ui) => {
             _that.val(ui.value);
 			$(_that).trigger("change");
-          }
-        });
+        }
+      });
+      var $labelwrap = $(this).wrap('<div class="slide-field-wrap"></div>');
+	  var strunitlabel = this.getUnit() ? this.getUnit() : '';
+	  $unitlabel = $('<span class="slide-unit-label">'+strunitlabel+'</span>').insertAfter(this);
+		
     },
     onchange() {
       this

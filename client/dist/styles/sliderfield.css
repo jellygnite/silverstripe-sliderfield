@@ -1,1 +1,14 @@
-.ui-slider-range{padding:0}.slide-controller{margin:10px 5px 0;max-width:500px;border:1px solid #ccc}
+.slider .form__field-holder { display:flex;justify-content:space-between; align-items:center; flex-wrap: wrap; }
+.slider .form__field-holder .form__field-description { flex-basis: 100%; } 
+.ui-slider-range{padding:0}.slide-controller{margin:0 5px 0;max-width:500px;border:1px solid #ccc}
+.slide-controller { width: 45%; font-size:12px;order:-1; }
+.form-group.slider::after { content:""; display: block; clear: both; height: 10px; }
+.slide-unit-label {width: 15%; } 
+.slider .form__field-holder .slide-field-wrap { width: 45%; display:flex;justify-content:space-between; align-items:center;}
+.slider .form__field-holder .slide-field-wrap input.slider { width: 90%; }
+.slider .form__field-holder .slide-field-wrap .slide-unit-label { width: 10%; padding-left: 1em; }
+
+@media (min-width: 992px){
+	.form-group.slider::after { height:0; }
+	.field input.slider { margin-top:0; }
+}
